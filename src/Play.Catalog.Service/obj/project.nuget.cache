@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "dgSpecHash": "S4YA8KTghsWoclwD9PqkAZndG8cTedEXJhL3qe2Ge5GMnpiv/QsEvBO2hEZ2l1/+fnqpfNYsnY/n7hHJKmV2KA==",
+  "success": true,
+  "projectFilePath": "D:\\projects\\Play.Catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sajidh\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\mongodb.bson\\2.17.1\\mongodb.bson.2.17.1.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\mongodb.driver\\2.17.1\\mongodb.driver.2.17.1.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\mongodb.driver.core\\2.17.1\\mongodb.driver.core.2.17.1.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\mongodb.libmongocrypt\\1.5.5\\mongodb.libmongocrypt.1.5.5.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\swashbuckle.aspnetcore\\5.0.0\\swashbuckle.aspnetcore.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.0.0\\swashbuckle.aspnetcore.swagger.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.0.0\\swashbuckle.aspnetcore.swaggergen.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.0.0\\swashbuckle.aspnetcore.swaggerui.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sajidh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
