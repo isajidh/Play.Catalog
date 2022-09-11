@@ -16,6 +16,7 @@ namespace Play.Catalog.Service.Repositories
         private readonly FilterDefinitionBuilder<Item> filterBuilder = Builders<Item>.Filter;
         public ItemsRepository()
         {
+            //Connecction String
             var mongoCLient = new MongoClient("mongodb://localhost:27017");
             var database = mongoCLient.GetDatabase("Catalog");
             dbCollection = database.GetCollection<Item>(collectionName);
@@ -58,22 +59,4 @@ namespace Play.Catalog.Service.Repositories
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

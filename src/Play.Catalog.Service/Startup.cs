@@ -14,6 +14,9 @@ using System.Reflection;
 using System.IO;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Bson;
 
 namespace Play.Catalog.Service
 
@@ -30,6 +33,10 @@ namespace Play.Catalog.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Save Date Guid and Date Time as strings
+            BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
+            BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
+
             services.AddControllers(options =>
             {
                 options.SuppressAsyncSuffixInActionNames = false;

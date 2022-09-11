@@ -46,13 +46,15 @@ namespace Play.Catalog.Service.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ItemDto>> CreateAsync(CreateItemDto createItemDto)
+        public async Task<ActionResult<ItemDto>> PostAsync(CreateItemDto createItemDto)
         {
-            var item = new Item(
+            var item = new Item
+            {
                 Name = createItemDto.Name,
                 Description = createItemDto.Description,
-                Price = createItemDto.Price
-            );
+                Price = createItemDto.Price,
+                CreatedDate = createItemDto.CreatedDate
+            };
 
             await itemsRepository.CreateAsync(item);
 
