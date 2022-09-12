@@ -6,7 +6,8 @@ using Play.Catalog.Service.Entities;
 
 namespace Play.Catalog.Service.Repositories
 {
-    public class ItemsRepository
+
+    public class ItemsRepository : IItemsRepository
     {
         private const string collectionName = "items";
 
@@ -14,11 +15,11 @@ namespace Play.Catalog.Service.Repositories
         private readonly IMongoCollection<Item> dbCollection;
 
         private readonly FilterDefinitionBuilder<Item> filterBuilder = Builders<Item>.Filter;
-        public ItemsRepository()
+        public ItemsRepository(IMongoDatabase database)
         {
             //Connecction String
-            var mongoCLient = new MongoClient("mongodb://localhost:27017");
-            var database = mongoCLient.GetDatabase("Catalog");
+            // var mongoCLient = new MongoClient("mongodb://localhost:27017");
+            // var database = mongoCLient.GetDatabase("Catalog");
             dbCollection = database.GetCollection<Item>(collectionName);
         }
 

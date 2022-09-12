@@ -20,8 +20,11 @@ namespace Play.Catalog.Service.Controllers
         //     new ItemDto(Guid.NewGuid(), "Keyboard", "Restores a small amount of HP", 6, DateTimeOffset.Now)
         // };
 
-        private readonly ItemsRepository itemsRepository = new();
-
+        private readonly IItemsRepository itemsRepository;
+        public ItemsController(IItemsRepository itemsRepository)
+        {
+            this.itemsRepository = itemsRepository;
+        }
         //Retrive All Items
         [HttpGet]
         public async Task<IEnumerable<ItemDto>> GetAsync()

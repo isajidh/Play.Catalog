@@ -17,12 +17,17 @@ using Microsoft.Extensions.Options;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson;
+using Play.Catalog.Service.Settings;
+using MongoDB.Driver;
+using Play.Catalog.Service.Repositories;
 
 namespace Play.Catalog.Service
 
 {
     public class Startup
     {
+
+        private ServiceSettings serviceSettings;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -36,6 +41,20 @@ namespace Play.Catalog.Service
             // Save Date Guid and Date Time as strings
             BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
             BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
+
+            serviceSettings = Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
+
+            services.AddSingleton(serviceProvider =>
+            {
+                var mongoDBSettings = Configuration.GetSection(nameof(MongoDBSettings)).Get<MongoDBSettings>();
+                var mongoClient = new MongoClient(mongoDBSettings.ConnecctionString);
+                // Below retirn means basically
+                // mongodb://localhost:27017/Catalog
+                return mongoClient.GetDatabase(serviceSettings.ServiceName);
+            });
+
+            services.AddSingleton<IItemsRepository, ItemsRepository>();
+
 
             services.AddControllers(options =>
             {
