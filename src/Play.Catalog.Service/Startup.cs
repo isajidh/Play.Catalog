@@ -20,14 +20,12 @@ using MongoDB.Bson;
 using Play.Catalog.Service.Settings;
 using MongoDB.Driver;
 using Play.Catalog.Service.Repositories;
-
 namespace Play.Catalog.Service
-
 {
     public class Startup
     {
-
         private ServiceSettings serviceSettings;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -46,15 +44,14 @@ namespace Play.Catalog.Service
 
             services.AddSingleton(serviceProvider =>
             {
-                var mongoDBSettings = Configuration.GetSection(nameof(MongoDBSettings)).Get<MongoDBSettings>();
-                var mongoClient = new MongoClient(mongoDBSettings.ConnecctionString);
-                // Below retirn means basically
+                var mongoDbSettings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
+                var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
+                // Below return means basically
                 // mongodb://localhost:27017/Catalog
                 return mongoClient.GetDatabase(serviceSettings.ServiceName);
             });
 
             services.AddSingleton<IItemsRepository, ItemsRepository>();
-
 
             services.AddControllers(options =>
             {

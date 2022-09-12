@@ -13,14 +13,10 @@ namespace Play.Catalog.Service.Controllers
     [Route("items")]
     public class ItemsController : ControllerBase
     {
-        // private static readonly List<ItemDto> items = new()
-        // {
-        //     new ItemDto(Guid.NewGuid(), "Potion", "Restores a small amount of HP", 6, DateTimeOffset.Now),
-        //     new ItemDto(Guid.NewGuid(), "Moniter", "Restores a small amount of HP", 6, DateTimeOffset.Now),
-        //     new ItemDto(Guid.NewGuid(), "Keyboard", "Restores a small amount of HP", 6, DateTimeOffset.Now)
-        // };
 
         private readonly IItemsRepository itemsRepository;
+
+        //itemRepository has been just injected to ItemController
         public ItemsController(IItemsRepository itemsRepository)
         {
             this.itemsRepository = itemsRepository;
