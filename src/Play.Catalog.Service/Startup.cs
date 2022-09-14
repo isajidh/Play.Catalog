@@ -1,25 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System.Reflection;
-using System.IO;
 using Microsoft.OpenApi.Models;
-using Microsoft.Extensions.Options;
-using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.Serializers;
-using MongoDB.Bson;
-using Play.Catalog.Service.Settings;
-using MongoDB.Driver;
-using Play.Catalog.Service.Repositories;
+using Play.Catalog.Service.Entities;
+using Play.Common.Settings;
+using Play.Common.MongoDB;
+
 namespace Play.Catalog.Service
 {
     public class Startup
@@ -36,23 +25,9 @@ namespace Play.Catalog.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Save Date Guid and Date Time as strings
-            BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
-            BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
-
             serviceSettings = Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
 
-            services.AddSingleton(serviceProvider =>
-            {
-                var mongoDbSettings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
-                var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
-                // Below return means basically
-                // mongodb://localhost:27017/Catalog
-                return mongoClient.GetDatabase(serviceSettings.ServiceName);
-            });
-
-            services.AddSingleton<IItemsRepository, ItemsRepository>();
-
+            services.AddMongo().AddMongoRepository<Item>("items");
             services.AddControllers(options =>
             {
                 options.SuppressAsyncSuffixInActionNames = false;
@@ -64,7 +39,7 @@ namespace Play.Catalog.Service
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "ToDo API",
+                    Title = "Play.Catalog.Service",
                     Description = "A simple example ASP.NET Core Web API",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact

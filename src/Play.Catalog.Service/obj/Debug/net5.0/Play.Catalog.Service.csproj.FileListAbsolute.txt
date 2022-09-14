@@ -43,3 +43,11 @@ D:\projects\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.
 D:\projects\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\ref\Play.Catalog.Service.dll
 D:\projects\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.pdb
 D:\projects\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.genruntimeconfig.cache
+D:\projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.Configuration.dll
+D:\projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Play.Common.dll
+D:\projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

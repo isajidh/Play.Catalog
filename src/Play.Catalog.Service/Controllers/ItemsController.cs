@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Service.Dtos;
 using System;
 using System.Linq;
-using Play.Catalog.Service.Repositories;
 using System.Threading.Tasks;
 using Play.Catalog.Service.Entities;
+using Play.Common;
 
 namespace Play.Catalog.Service.Controllers
 {
@@ -14,10 +14,10 @@ namespace Play.Catalog.Service.Controllers
     public class ItemsController : ControllerBase
     {
 
-        private readonly IItemsRepository itemsRepository;
+        private readonly IRepository<Item> itemsRepository;
 
         //itemRepository has been just injected to ItemController
-        public ItemsController(IItemsRepository itemsRepository)
+        public ItemsController(IRepository<Item> itemsRepository)
         {
             this.itemsRepository = itemsRepository;
         }
@@ -57,7 +57,7 @@ namespace Play.Catalog.Service.Controllers
 
             await itemsRepository.CreateAsync(item);
 
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = item.id }, item);
+            return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
         }
 
 
@@ -92,7 +92,7 @@ namespace Play.Catalog.Service.Controllers
                 return NotFound();
             }
 
-            await itemsRepository.RemoveAsync(item.id);
+            await itemsRepository.RemoveAsync(item.Id);
             return NoContent();
         }
 
